@@ -25,7 +25,7 @@ public class MoveAndTurn extends LinearOpMode {
         ElapsedTime timer = new ElapsedTime();
 
         // Power robot forward for drive_time amount of seconds
-        while (timer.seconds() < drive_time) {
+        while (timer.seconds() < 3) {
             rightMotor.setPower(1);
             leftMotor.setPower(1);
         }
@@ -35,6 +35,23 @@ public class MoveAndTurn extends LinearOpMode {
 
         //Add the code for turning the robot for turn_time amount of seconds here
         //You can create a new timer to do this or use the same timer
+        // Start timer.
+        ElapsedTime timer2 = new ElapsedTime();
 
+        // Power robot forward for drive_time amount of seconds
+        while (timer2.seconds() < 7) {
+            rightMotor.setPower(-0.5);
+            leftMotor.setPower(0.5);
+        }
+        // Stop robot
+        leftMotor.setPower(0);
+        rightMotor.setPower(0);
+
+        ElapsedTime timer3 = new ElapsedTime();
+        while (timer3.seconds() < 2) {
+            rightMotor.setPower(1);
+            leftMotor.setPower(1);
+        }
     }
+
 }
